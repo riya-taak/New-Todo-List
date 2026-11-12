@@ -19,19 +19,18 @@ function render(list) {
     for (let i = 0; i < list.length; i++) {
         let editBtn = `<button class='allBtns editColor' onclick="editItem('${list[i]}')">Edit</button>`
         let dltBtn = `<button class='allBtns dltColor' onclick="removeItm('${list[i]}')">Delete</button>`
-        let li = `<li class='list' > <span>${i + 1}. ${list[i]}</span> <div class="btns"> ${editBtn}  ${dltBtn} </div> </li>`;
+        let li = `<li class='list' > <span>${i + 1}. ${list[i]} </span> <div class="btns"> ${editBtn}  ${dltBtn} </div> </li>`;
         result = result + li;
     }
     orderlist.innerHTML = result;
 }
 function editItem(listItm) {
-
-    let value = prompt("edit this");
+    let value = prompt("edit this", listItm );
     if (value === null || value === "") {
         return;
     }
     for (let i = 0; i < todoList.length; i++) {
-        if (todoList[i] === listItm) {
+        if (todoList[i] === listItm ) {
             todoList[i] = value;
         }
     }
