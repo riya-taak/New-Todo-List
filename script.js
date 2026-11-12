@@ -27,12 +27,17 @@ function render(list) {
 function editItem(listItm) {
 
     let value = prompt("edit this");
+    if (value === null || value === "") {
+        return;
+    }
     for (let i = 0; i < todoList.length; i++) {
         if (todoList[i] === listItm) {
             todoList[i] = value;
         }
     }
     render(todoList);
+
+
 }
 
 
